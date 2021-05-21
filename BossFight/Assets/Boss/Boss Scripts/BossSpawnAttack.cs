@@ -16,7 +16,7 @@ public class BossSpawnAttack : BossAttack
 
     Vector3 spawnPos = new Vector3();
 
-    public GameObject skill;
+    public GameObject skillPrefab;
     public bool setSpawnVectorToEnemy;
     public Vector3 spawnVector;
     public Vector3 rotation;
@@ -91,6 +91,7 @@ public class BossSpawnAttack : BossAttack
                 break;
         }
 
-        Instantiate(skill, spawnPos, Quaternion.Euler(rotation));
+        GameObject skill = Instantiate(skillPrefab, spawnPos, Quaternion.Euler(rotation));
+        skill.GetComponent<Skill>().owner = enemyPos;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Skill : MonoBehaviour
 {
+    [HideInInspector] public Transform owner;
     public float timeTillDestroy;
 
     // Start is called before the first frame update

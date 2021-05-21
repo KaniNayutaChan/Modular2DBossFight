@@ -1,28 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7788150942072660449
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c16d970e3543d849aeadf7e4089495b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  startTimeTillIdle: 2
-  startTimeTillAttack: 0.5
-  noOfAttacks: 12
-  timeBetweenAttacks: 0.05
-  spawnType: 4
-  skill: {fileID: 8267659490113657629, guid: 6f709de8e34147a4687aacf3dc516fd6, type: 3}
-  setSpawnVectorToEnemy: 1
-  spawnVector: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
-  gapDistance: 5
 --- !u!1107 &-3307525045028738545
 AnimatorStateMachine:
   serializedVersion: 5
@@ -41,12 +18,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -1848290138271112670}
     m_Position: {x: 250, y: 240, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 3457382648645674981}
-    m_Position: {x: 250, y: 280, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -2871460103940824717}
-    m_Position: {x: 250, y: 320, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -57,33 +28,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 4257885425538363675}
---- !u!1102 &-2871460103940824717
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 3
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours:
-  - {fileID: -7788150942072660449}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &-1848290138271112670
 AnimatorState:
   serializedVersion: 5
@@ -133,33 +77,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &3457382648645674981
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 2
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours:
-  - {fileID: 7838489840783376799}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &4257885425538363675
 AnimatorState:
   serializedVersion: 5
@@ -233,8 +150,6 @@ MonoBehaviour:
   maxTimeTillAttack: 2
   attackList:
   - 1
-  - 2
-  - 3
 --- !u!114 &7046176098700454923
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,26 +164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   startTimeTillIdle: 1
---- !u!114 &7838489840783376799
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3523fb5b7cd44d446b55a0e34067f32a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 50
-  startTimeTillIdle: 0
-  startTimeTillAttack: 0.5
-  noOfAttacks: 0
-  timeBetweenAttacks: 0
-  movementType: 1
-  destinationVector: {x: 5, y: 0, z: 0}
-  startWaitTime: 0
 --- !u!114 &9108436265810876534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,11 +179,11 @@ MonoBehaviour:
   speed: 0
   startTimeTillIdle: 2
   startTimeTillAttack: 0.5
-  noOfAttacks: 2
-  timeBetweenAttacks: 0
-  spawnType: 2
-  skill: {fileID: 8267659490113657629, guid: 130b642158c3ba941b70da2116e86978, type: 3}
-  setSpawnVectorToEnemy: 0
-  spawnVector: {x: 7, y: -3, z: 3}
+  noOfAttacks: 12
+  timeBetweenAttacks: 0.1
+  spawnType: 4
+  skillPrefab: {fileID: 8267659490113657629, guid: 130b642158c3ba941b70da2116e86978, type: 3}
+  setSpawnVectorToEnemy: 1
+  spawnVector: {x: 0, y: 0, z: 3}
   rotation: {x: 0, y: 0, z: 0}
-  gapDistance: 0
+  gapDistance: 5

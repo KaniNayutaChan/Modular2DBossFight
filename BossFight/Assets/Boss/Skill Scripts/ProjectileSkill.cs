@@ -8,6 +8,7 @@ public class ProjectileSkill : Skill
     public float rotationSpeed;
     public float xRotation;
     public bool facePlayerOnStart;
+    public bool faceAwayFromEnemyOnStart;
 
     public ProjectileType projectileType;
     public enum ProjectileType
@@ -24,6 +25,10 @@ public class ProjectileSkill : Skill
         if (facePlayerOnStart)
         {
             transform.forward = Player.instance.transform.position - transform.position;
+        }
+        else if(faceAwayFromEnemyOnStart)
+        {
+            transform.forward = transform.position - owner.position;
         }
 
         transform.Rotate(new Vector3(Random.Range(-xRotation, xRotation), 0, 0));
