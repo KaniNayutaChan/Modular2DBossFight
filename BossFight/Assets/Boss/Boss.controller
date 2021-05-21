@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5cda14225dca544a519c39d5becb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  startTimeTillIdle: 1
+  speed: 20
   attackType: 0
+  startTimeTillIdle: 1
+  startTimeTillAttack: 0.3
+  noOfAttacks: 0
+  skill: {fileID: 0}
+  timeBetweenAttacks: 0
+  xRange: 0
+  yMinRange: 0
+  yMaxRange: 0
 --- !u!1107 &-3307525045028738545
 AnimatorStateMachine:
   serializedVersion: 5
@@ -137,9 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5cda14225dca544a519c39d5becb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 20
+  attackType: 1
   startTimeTillIdle: 1
-  attackType: 0
+  startTimeTillAttack: 0
+  noOfAttacks: 0
+  skill: {fileID: 0}
+  timeBetweenAttacks: 0
+  xRange: 7
+  yMinRange: -2
+  yMaxRange: 2
 --- !u!114 &2996610564471896102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,8 +167,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  startTimeTillIdle: 1
-  attackType: 0
+  attackType: 2
+  startTimeTillIdle: 3
+  startTimeTillAttack: 1
+  noOfAttacks: 10
+  skill: {fileID: 8267659490113657629, guid: 130b642158c3ba941b70da2116e86978, type: 3}
+  timeBetweenAttacks: 0.2
+  xRange: 0
+  yMinRange: 0
+  yMaxRange: 0
 --- !u!1102 &4257885425538363675
 AnimatorState:
   serializedVersion: 5

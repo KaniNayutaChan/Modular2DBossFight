@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class BossAttack : Boss
 {
-    public float startTimeTillIdle;
-    public float startTimeTillAttack;
-    public float noOfAttacks;
-    float timeTillIdle;
-    float timeTillAttack;
-    int counter;
-
     public AttackType attackType;
     public enum AttackType
     {
@@ -18,6 +11,23 @@ public class BossAttack : Boss
         moveToRandomDestination,
         spawnSkill
     };
+
+    public float startTimeTillIdle;
+    public float startTimeTillAttack;
+    public float noOfAttacks;
+
+    [Space]
+    public GameObject skill;
+    public float timeBetweenAttacks;
+
+    [Space]
+    public float xRange;
+    public float yMinRange;
+    public float yMaxRange;
+
+    int counter;
+    float timeTillIdle;
+    float timeTillAttack;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -57,6 +67,11 @@ public class BossAttack : Boss
             }
         }
 
+        if (timeTillAttack >= 0)
+        {
+            timeTillAttack -= Time.deltaTime;
+        }
+
         switch (attackType)
         {
             case AttackType.moveToCharacter:
@@ -75,12 +90,12 @@ public class BossAttack : Boss
 
     void MoveToCharacterStart()
     {
-
+        SetDestinationToPlayer(0, 0);
     }
 
     void MoveToRandomDestinationStart()
     {
-
+        SetDestination(Random.Range(-xRange, xRange), Random.Range(yMinRange, yMaxRange));
     }
 
     void SpawnSkillStart()
@@ -90,16 +105,30 @@ public class BossAttack : Boss
 
     void MoveToCharacterUpdate()
     {
-
+        if (timeTillAttack < 0)
+        {
+            MoveToDestination();
+        }
     }
 
     void MoveToRandomDestinationUpdate()
     {
-
+        if (timeTillAttack < 0)
+        {
+            MoveToDestination();
+        }
     }
 
     void SpawnSkillUpdate()
     {
-
+        if(timeTillAttack < 0)
+        {
+            if(counter < noOfAttacks)
+            {
+                counter++;
+                Instantiate(skill, enemyPos.position, enemyPos.rotation);
+                timeTillAttack = timeBetweenAttacks;
+            }
+        }
     }
 }

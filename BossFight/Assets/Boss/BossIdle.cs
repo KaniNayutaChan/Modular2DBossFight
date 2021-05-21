@@ -15,7 +15,7 @@ public class BossIdle : Boss
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
         timeTillAttack = Random.Range(minTimeTillAttack, maxTimeTillAttack);
-        attackToUse = Random.Range(0, attackList.Length - 1);
+        attackToUse = Random.Range(0, attackList.Length);
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
