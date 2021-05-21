@@ -13,15 +13,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  attackType: 0
+  attackType: 2
   startTimeTillIdle: 1
   startTimeTillAttack: 0.3
-  noOfAttacks: 0
-  skill: {fileID: 0}
-  timeBetweenAttacks: 0
+  noOfAttacks: 50
+  skill: {fileID: 8267659490113657629, guid: 130b642158c3ba941b70da2116e86978, type: 3}
+  timeBetweenAttacks: 0.02
   xRange: 0
   yMinRange: 0
   yMaxRange: 0
+--- !u!114 &-4669688210660144527
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5cda14225dca544a519c39d5becb40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  attackType: 2
+  startTimeTillIdle: 4
+  startTimeTillAttack: 0.5
+  noOfAttacks: 3
+  skill: {fileID: 8267659490113657629, guid: 8c6129f0c0cf78246868940b7157851f, type: 3}
+  timeBetweenAttacks: 1
+  xRange: 0
+  yMinRange: 0
+  yMaxRange: 0
+--- !u!1102 &-3553297246105902817
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: attack4
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -4669688210660144527}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 0}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1107 &-3307525045028738545
 AnimatorStateMachine:
   serializedVersion: 5
@@ -46,6 +95,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -385101178876206194}
     m_Position: {x: 250, y: 320, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -3553297246105902817}
+    m_Position: {x: 250, y: 360, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -144,9 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5cda14225dca544a519c39d5becb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 50
   attackType: 1
-  startTimeTillIdle: 1
+  startTimeTillIdle: 3
   startTimeTillAttack: 0
   noOfAttacks: 0
   skill: {fileID: 0}
@@ -166,11 +218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5cda14225dca544a519c39d5becb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  attackType: 2
+  speed: 30
+  attackType: 0
   startTimeTillIdle: 3
-  startTimeTillAttack: 1
-  noOfAttacks: 10
+  startTimeTillAttack: 0.5
+  noOfAttacks: 0
   skill: {fileID: 8267659490113657629, guid: 130b642158c3ba941b70da2116e86978, type: 3}
   timeBetweenAttacks: 0.2
   xRange: 0
@@ -276,6 +328,7 @@ MonoBehaviour:
   - attack1
   - attack2
   - attack3
+  - attack4
 --- !u!114 &7046176098700454923
 MonoBehaviour:
   m_ObjectHideFlags: 1
