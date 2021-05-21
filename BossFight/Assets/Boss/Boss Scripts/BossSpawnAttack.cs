@@ -26,6 +26,8 @@ public class BossSpawnAttack : BossAttack
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
+        FacePlayer();
+
         if(setSpawnVectorToEnemy)
         {
             spawnVector = enemyPos.position;
@@ -35,6 +37,17 @@ public class BossSpawnAttack : BossAttack
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
+
+        if (timeTillAttack > 0)
+        {
+            timeTillAttack -= Time.deltaTime;
+        }
+        else if (counter < noOfAttacks)
+        {
+            timeTillAttack = timeBetweenAttacks;
+            UseAttack();
+            counter++;
+        }
     }
 
     protected override void UseAttack()
@@ -74,7 +87,7 @@ public class BossSpawnAttack : BossAttack
                 break;
 
             case SpawnType.SpawnInCircle:
-                spawnPos.Set(spawnVector.x + (gapDistance * Mathf.Cos(Mathf.PI * counter/noOfAttacks)), spawnVector.y + (gapDistance * Mathf.Sin((Mathf.PI * counter) / noOfAttacks)), 0);
+                spawnPos.Set(spawnVector.x + (gapDistance * Mathf.Cos(2 * Mathf.PI * counter/noOfAttacks)), spawnVector.y + (gapDistance * Mathf.Sin((2 * Mathf.PI * counter) / noOfAttacks)), 0);
                 break;
         }
 

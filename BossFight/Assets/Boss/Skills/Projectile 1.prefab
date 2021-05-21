@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3182798774616662132}
   - component: {fileID: 4907187522350400180}
   - component: {fileID: 3108359215639038380}
-  - component: {fileID: -4471196333473086033}
+  - component: {fileID: -5753088706102006981}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4471196333473086033
+--- !u!114 &-5753088706102006981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,12 +105,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8267659490113657629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4077981923f43048800cfcc67b10622, type: 3}
+  m_Script: {fileID: 11500000, guid: 2af2ae9568d9f12419cd848665e01872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillDestroy: 2
-  speed: 20
-  rotationSpeed: 2
-  xRotation: 0
-  facePlayerOnStart: 1
-  projectileType: 1
+  timeTillDestroy: 0
+  amountToIncrease: 100
+  amountToDecrease: 200
+  startTimeTillIncrease: 0.3
+  startTimeTillDecrease: 0.3
+  maxSize: 5

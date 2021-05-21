@@ -22,7 +22,25 @@ public class Boss : StateMachineBehaviour
 
     protected void SetDestinationToPlayer(float x, float y)
     {
-        destination.Set(playerPos.transform.position.x + x, playerPos.transform.position.y + y, 0);
+        if(IsFacingLeft())
+        {
+            destination.Set(playerPos.transform.position.x - x, playerPos.transform.position.y + y, 0);
+        }
+        else
+        {
+            destination.Set(playerPos.transform.position.x + x, playerPos.transform.position.y + y, 0);
+        }
+    }
+    protected void SetDestinationToEnemy(float x, float y)
+    {
+        if (IsFacingLeft())
+        {
+            destination.Set(enemyPos.transform.position.x - x, enemyPos.transform.position.y + y, 0);
+        }
+        else
+        {
+            destination.Set(enemyPos.transform.position.x + x, enemyPos.transform.position.y + y, 0);
+        }
     }
 
     protected void SetDestination(float x, float y)
@@ -73,6 +91,18 @@ public class Boss : StateMachineBehaviour
     protected bool IsFacingLeft()
     {
         if(enemyPos.rotation == Quaternion.Euler(0, 90, 0))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    protected bool IsAtDestination()
+    {
+        if(Vector3.Distance(enemyPos.position, destination) < 0.1f)
         {
             return true;
         }

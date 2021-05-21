@@ -10,12 +10,14 @@ public class BossAttack : Boss
     public float timeBetweenAttacks;
 
     protected int counter;
-    float timeTillIdle;
-    float timeTillAttack;
+    protected float timeTillIdle;
+    protected float timeTillAttack;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
+
+        FacePlayer();
 
         timeTillIdle = startTimeTillIdle;
         timeTillAttack = startTimeTillAttack;
@@ -34,17 +36,6 @@ public class BossAttack : Boss
             {
                 animator.Play("idle");
             }
-        }
-
-        if (timeTillAttack > 0)
-        {
-            timeTillAttack -= Time.deltaTime;
-        }
-        else if (counter < noOfAttacks)
-        {
-            timeTillAttack = timeBetweenAttacks;
-            UseAttack();
-            counter++;
         }
     }   
 
